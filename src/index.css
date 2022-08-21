@@ -7,6 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "HrGroteskRegular";
+  src: local("HrGroteskRegular"),
+   url("./fonts/hk-grotesk.regular.ttf") format("truetype");
+  font-weight:normal;
+}
+
+@font-face {
+  font-family: "HrGroteskLight";
+  src: local("HrGroteskLight"),
+   url("./fonts/hk-grotesk.light.ttf") format("truetype");
+  font-weight:lighter;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
