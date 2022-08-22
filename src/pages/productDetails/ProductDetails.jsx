@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { MdClose } from "react-icons/md";
 import './productDetails.scss';
 import LoadingOne from '../../components/loading/LoadingOne';
 import { navigationRouter } from '../../helpers/navigation-router';
@@ -41,12 +42,21 @@ function ProductDetails() {
         navigationRouter.navigate(`not-found`);
       });
   }, []);
+  const handleClose = () => {
+    navigationRouter.navigate(`/`);
+  }
   return (
     <div className='RecipePage'>
+      <div className='closeButtonContainer'>
+        <button className='closeButton' onClick={() => handleClose()}>
+          <MdClose size={15} style={{ color: '#fff'}} />
+        </button>
+      </div>
       {
         loading
           ? <LoadingOne />
           : <div className='recipe-container'>
+
               <div className="imagePart">
                 <img src={`${process.env.REACT_APP_S3_URL_PREFIX}/${pic}`} alt="" />
               </div>

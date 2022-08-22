@@ -1,0 +1,66 @@
+@import '../../styles/index.scss';
+
+.NotFoundPage {
+    background-color: $primary;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .image-part, .description-part {
+        flex: 1;
+    }
+    .image-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        img {
+            width: 45%;
+            max-width: 300px;
+        }
+    }
+    .description-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        .description-text {
+            h1 {
+                font-family: HrGroteskRegular;
+                color: $primary-text-color;
+                font-size: 40px;
+                letter-spacing: 1px;
+                font-weight: bold;
+                text-align: center;
+                margin: 0;
+                margin-bottom: 3px;
+            }
+            h6 {
+                font-family: HrGroteskRegular;
+                color: $primary-text-color;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                margin: 0;
+            }
+        }
+        .buttonContainer {
+            button {
+                background-color: $primary;
+                width: 100px;
+                border: 1px solid $primary-text-color;
+                height: 30px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: $primary-text-color;
+            }
+        }
+    }
+}
