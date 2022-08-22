@@ -4,13 +4,16 @@ import './fonts/hk-grotesk.light.ttf';
 import './fonts/hk-grotesk.regular.ttf';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <App />
+      </BrowserRouter>
   </React.StrictMode>
 );
 
