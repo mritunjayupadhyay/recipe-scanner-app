@@ -1,0 +1,116 @@
+@import '../../styles/index.scss';
+
+.RecipePage {
+    background-color: $primary;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 30px;
+    position: relative;
+    .closeButtonContainer {
+        display: flex;
+        justify-content: flex-end;
+        .closeButton {
+            background-color: $ternary-text-color;
+            width: 20px;
+            border: 0;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    .recipe-container {
+        padding-top: 10px;
+        .imagePart {
+            padding: 20px 5px;
+            text-align: center;
+            img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        .productNameHeading {
+            padding-bottom: 20px;
+            .productName {
+                font-family: HrGroteskRegular;
+                color: $primary-text-color;
+                font-size: 20px;
+                letter-spacing: 1px;
+                font-weight: bold;
+                text-transform: capitalize;
+                margin: 0;
+                margin-bottom: 3px;
+            }
+            .non-veg-indicator-container {
+                display: flex;
+                align-items: center;
+                .non-veg-indicator-box {
+                    width: 12px;
+                    height: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    &.nonVeg {
+                        border: 0.5px solid $danger;
+                    }
+    
+                    &.veg {
+                        border: 0.5px solid $green;
+                    }
+    
+                    .non-veg-indicator-circle {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+    
+                        &.nonVeg {
+                            background-color: $danger;
+                        }
+    
+                        &.veg {
+                            background-color: $green;
+                        }
+                    }
+    
+                }
+    
+                .non-veg-indicator-text {
+                    font-family: HrGroteskLight;
+                    color: $yellow-heading-color;
+                    font-size: 16px;
+                    letter-spacing: 0.5px;
+                    font-weight: lighter;
+                    line-height: 18px;
+                    padding-left: 10px;
+                }
+            }
+            
+        }
+
+        .ingredientHeading {
+            font-family: HrGroteskRegular;
+            color: $secondary-text-color;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .ingredientList {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            .ingredientListItem {
+                font-family: HrGroteskLight;
+                color: $ternary-text-color;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                font-weight: lighter;
+            }
+        }
+    }
+
+}

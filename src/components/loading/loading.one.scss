@@ -1,0 +1,97 @@
+@import '../../styles/index.scss';
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary;
+    z-index: 100;
+  }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  .hourglass {
+    width: 35px;
+    height: 50px;
+    border-style: solid;
+    border-width: 25px 12px;
+    border-color: $ternary transparent;
+    border-radius: 10%;
+    position: relative;
+    animation: spin 1s linear infinite;
+  }
+  .hourglass::before {
+    content: "";
+    width: 25px;
+    height: 45px;
+    border-width: 22.5px 11px;
+    border-style: solid;
+    border-color: $yellow-heading-color transparent transparent;
+     position: absolute;
+    top: -22.5px;
+    left: -7px;
+    animation: slideOut 1s linear infinite;
+  }
+  .hourglass::after {
+    content: "";
+    width: 25px;
+    height: 45px;
+    border-width: 0 11px;
+    border-style: solid;
+    border-color: transparent transparent $yellow-heading-color;
+     position: absolute;
+    top: -22.5px;
+    left: -7px;
+    animation: slideIn 1s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotation(0deg);
+    }
+    90% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      top: -22.5px;
+      width: 25px;
+      border-width: 22.5px 11px;
+    }
+    90% {
+      top: 0em;
+      width: 0;
+      border-width: 0;
+      left: 5.5px;
+    }
+    100% {
+      top: 0em;
+      width: 0;
+      border-width: 0;
+      left: 5.5px;
+    }
+  }
+  @keyframes slideIn {
+    0% {
+      border-width: 0 11px;
+    }
+    90% {
+      border-width: 22.5px 11px;
+    }
+    100% {
+      border-width: 22.5px 11px;
+    }
+  }
+  
+  /*
+  I have made this for learning purpose. I wanted to try at my own. For original you can see https://codepen.io/TBernard/pen/eJYbRy.
+  */
