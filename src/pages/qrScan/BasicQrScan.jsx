@@ -16,7 +16,9 @@ function BasicQrScan() {
             const dataArr = data.split('/');
             const recipeId = dataArr[dataArr.length-1];
             navigationRouter.navigate(`/recipe/${recipeId}`);
-        }
+        } else {
+			navigationRouter.navigate(`/recipe/${data}`);
+		}
     }
 	useEffect(() => {
 		const scan = new QrScanner(videoRef.current, (result) => {
@@ -25,7 +27,9 @@ function BasicQrScan() {
 			if (result?.data) {
                 handleScanData(result.data);
             }
-			scanner.pause();
+			if (scanner) {
+				scanner.pause();
+			}
 		}, {
             maxScansPerSecond: 1,
             highlightScanRegion: true
