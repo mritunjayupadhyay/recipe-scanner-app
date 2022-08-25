@@ -8,6 +8,7 @@ import { navigationRouter } from '../../helpers/navigation-router';
 
 function ProductDetails() {
   const { recipeId } = useParams();
+  const [errorLogs, setErrorLog] = useState([]);
   console.log("what is recipe di", recipeId);
   const [loading, setLoading] = useState(false);
   const [ingredients, setIngredients] = useState([]);
@@ -29,16 +30,22 @@ function ProductDetails() {
           setIngredients(ingredients);
           setRecipeName(name);
           setPic(recipePic);
-          setLoading(false)
+          setLoading(false);
+          // const errorText = 'success_' + JSON.stringify(data);
+          // setErrorLog([...errorLogs, errorText]);
         } else {
-          navigationRouter.navigate(`not-found`);
+          setLoading(false);
           console.log("from api", data);
-          setLoading(false)
+          navigationRouter.navigate(`not-found`);
+          // const errorText = 'fail_' + JSON.stringify(data);
+          // setErrorLog([...errorLogs, errorText]);
         }
       })
       .catch((err) => {
         console.log(err.message);
         setLoading(false);
+        // const errorText = 'error_' + JSON.stringify(err);
+        // setErrorLog([...errorLogs, errorText]);
         navigationRouter.navigate(`not-found`);
       });
   }, []);
@@ -79,6 +86,16 @@ function ProductDetails() {
                                 </li>
                             )}
               </ul>
+              {/* <div style={{ paddingTop: 100 }}></div>
+              <ul className='ingredientList'>
+              {errorLogs.map((errorText, i) =>
+                                <li 
+                                className='ingredientListItem' 
+                                key={i}
+                                >{errorText}
+                                </li>
+                            )}
+              </ul> */}
           </div>
       }
       </div>
